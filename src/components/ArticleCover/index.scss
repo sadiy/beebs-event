@@ -1,0 +1,23 @@
+.article-cover {
+  position: relative;
+}
+
+.article-cover-fade {
+  position: absolute;
+  bottom: 0px;
+  height: 30%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+.article-cover-text {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    left: 10px;
+}
