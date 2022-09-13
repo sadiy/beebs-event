@@ -1,0 +1,23 @@
+.home-cover {
+    display: none;
+}
+
+.home-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .home-container {
+        width: 60%;
+    }    
+
+    .home-cover {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        height: 40vh;
+        object-position: 10% 40%;
+    }    
+}
