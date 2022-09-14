@@ -25,7 +25,12 @@ const News = () => {
             (
                 <NewsDetails
                     title={record.fields.title_event ?? record.fields.title}
+                    cover_alt={record.fields.cover_alt}
                     cover_url={record.fields.cover_url}
+                    address_name={record.fields.address_name}
+                    address_street={record.fields.address_street}
+                    address_city={record.fields.address_city}
+                    address_zipcode={record.fields.address_zipcode}
                     content={record.fields.description}
                 />
             )

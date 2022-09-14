@@ -2,10 +2,10 @@ import api from "../api";
 import { setNews, setError} from "../slices/news";
 import { AppDispatch } from "../store";
 
-export function fetchNews() {
+export function fetchNews(page: number = 0) {
     return async (dispatch: AppDispatch) => {
       api
-        .get("/records/1.0/search/?dataset=que-faire-a-paris-&facet=date_start&facet=date_end&facet=tags&facet=address_name&facet=address_zipcode&facet=address_city&facet=pmr&facet=blind&facet=deaf&facet=transport&facet=price_type&facet=access_type&facet=updated_at&facet=programs")
+        .get(`/records/1.0/search/?dataset=que-faire-a-paris-&start=${page*10}&facet=date_start&facet=date_end&facet=tags&facet=address_name&facet=address_zipcode&facet=address_city&facet=pmr&facet=blind&facet=deaf&facet=transport&facet=price_type&facet=access_type&facet=updated_at&facet=programs`)
         .then((response) => {
           dispatch(setNews(response.data));
         })

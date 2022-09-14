@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import {
     Grid,
-    Box
+    Box,
+    Pagination
 } from "@mui/material";
 import ArticleCover from "../ArticleCover";
 import { useAppDispatch, useAppSelector } from "../../hooks";
@@ -13,9 +14,14 @@ const Home = () => {
     const dispatch = useAppDispatch();
     const { loading, error, news } = useAppSelector(newsSelector);
 
+    const [page, setPage] = React.useState(1);
+    const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+        setPage(value);
+    };
+
     useEffect(() => {
-        dispatch(fetchNews());
-    }, [dispatch]);
+        dispatch(fetchNews(page-1));
+    }, [dispatch, page]);
 
     const renderNews = () => {
         if (loading) return (<strong>Loading...</strong>)
@@ -37,6 +43,7 @@ const Home = () => {
             <Box className="home-container">
                 <Grid container direction="row" spacing={4} justifyContent="center" alignItems="center">
                     {renderNews()}
+                    <Pagination count={10} page={page} onChange={handleChange} style={{marginTop: "20px"}} />
                 </Grid>
             </Box>
         </>)
