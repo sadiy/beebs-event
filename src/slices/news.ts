@@ -14,49 +14,49 @@ interface ApiResponse {
   records?: ApiNewsRecord[];
 }
 
-interface ApiNewsRecord {
-  datasetid: String;
-  recordid: String;
+export interface ApiNewsRecord {
+  datasetid: string;
+  recordid: string;
   fields: {
-    url: String;
-    access_type: String;
-    price_type: String;
-    tags: String;
-    description: String;
-    address_zipcode: String;
-    lat_lon: Number[];
-    contributor_group: String;
-    cover_url: String;
-    title: String;
-    id:String;
-    access_link: String;
-    address_name: String;
-    audience: String;
-    price_detail: String;
-    address_street: String;
-    address_city: String;
-    cover_alt: String;
-    cover_credit: String;
-    updated_at: String;
-    lead_text: String;
-    contact_url: String;
+    url: string;
+    access_type: string;
+    price_type: string;
+    tags: string;
+    description: string;
+    address_zipcode: string;
+    lat_lon: number[];
+    contributor_group: string;
+    cover_url: string;
+    title: string;
+    id:string;
+    access_link: string;
+    address_name: string;
+    audience: string;
+    price_detail: string;
+    address_street: string;
+    address_city: string;
+    cover_alt: string;
+    cover_credit: string;
+    updated_at: string;
+    lead_text: string;
+    contact_url: string;
     image_couverture: {
-      id: String;
-      mimetype: String;
-      height: Number;
-      width: Number;
-      filename: String;
-      thumbnail: Boolean;
-      format: String;
-      color_summary: String[];
+      id: string;
+      mimetype: string;
+      height: string;
+      width: string;
+      filename: string;
+      thumbnail: boolean;
+      format: string;
+      color_summary: string[];
     };
-    title_event: String;
+    title_event: string;
   };
   geometry: {
-    type: String;
-    coordinates: Number[];
+    type: string;
+    coordinates: number[];
   };
-  record_timestamp: String;
+  record_timestamp: string;
 }
 
 export const initialState: NewsState = {

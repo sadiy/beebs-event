@@ -7,13 +7,14 @@ import {
 import Home from "../Home";
 import News from "../News";
 
-const Router = (props:any) => {
+const Router = (props: any) => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />}>
-                    <Route path="teams">
-                        <Route path=":teamId" element={<News />} />
+                <Route path="/">
+                    <Route index element={<Home />} />
+                    <Route path="news">
+                        <Route path=":newsId" element={<News />} />
                     </Route>
                 </Route>
             </Routes>
