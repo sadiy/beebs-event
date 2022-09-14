@@ -83,7 +83,6 @@ const newsSlice = createSlice({
   },
 });
 
-// export the actions
 export const { setLoading, setNews, setError } = newsSlice.actions;
 
 export const newsSelector = (state: RootState) => state.news;

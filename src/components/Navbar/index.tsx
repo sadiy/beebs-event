@@ -10,7 +10,7 @@ import './index.scss';
 
 const Navbar = (props: any) => {
     return (
-        <AppBar position="static">
+        <AppBar elevation={0} position="static">
             <Toolbar sx={{ justifyContent: "space-between" }}>
                 <IconButton
                     color="inherit"
@@ -20,7 +20,7 @@ const Navbar = (props: any) => {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h3" fontFamily={"Lobster"} className="logoTitle" data-text="Que faire à Paris ?">
-                    Que faire à Paris ?
+                    <a href="/">Que faire à Paris ?</a>
                 </Typography>
             </Toolbar>
         </AppBar>
